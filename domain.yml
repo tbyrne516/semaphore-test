@@ -1,26 +1,22 @@
 ---
 - hosts: web_servers
   become: true
-  vars:
-     - packages:
-       - realmd
-       - adcli
-       - sssd
-       - libnss-sss
-       - sssd
-       - sssd-tools
-       - samba-common-bin
-       - oddjob
-       - oddjob-mkhomedir
-       - packagekit
   tasks:
-- name: update apt packages
-  apt:
-  name: "*"
-  state: latest
-  update_cache: yes
-  - name: Install Packages
-    apt:
-      pkg: "{{ packages }}"
-      state: latest
-      update_cache: yes
+  -name: Install realmd 
+  apt: name=realmd state=present update_cache=true
+  - name: Install adcli
+  apt: name=adcli state=present update_cache=true
+  - name: Install sssd
+  apt: name=sssd state=present update_cache=true
+  -name: Install libnss-sss
+  apt: name=libnss-sss state=present update_cache=true
+  -name: install sssd-tools
+  apt: name=sssd-tools state=present update_cache=true
+  -name Install samba-common-bin
+  apt: name=samba-common-bin state=present update_cache=true
+  - name: Install oddjob
+  apt: name=oddjob state=present update_cache=true
+  - name: Install oddjob-mkhomedir
+  apt: name=oddjob-mkhomedir state=present update_cache=true
+  - name: Install packagekit
+  apt: name=packagekit state=present update_cache=true
