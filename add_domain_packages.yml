@@ -10,7 +10,13 @@
   - name: Install required packages
     apt: 
       name:
-        - package1
-        - package2
-        - package3 
+        -realmd
+        - adcli
+        - sssd
+        - libnss-sss
+        - sssd-tools
+        - samba-common-bin
+        - oddjob
+        - oddjob-mkhomedir
+        - name=packagekit
       state: present
