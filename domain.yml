@@ -1,0 +1,30 @@
+---
+- name: update system
+  hosts: web_servers
+  apt:
+    update_cache: yes
+    
+- name: add software for connectin to domain
+  vars:
+   - packages:
+     - realmd
+     - adcli
+     - sssd
+     - libnss-sss
+     - sssd
+     - sssd-tools
+     - samba-common-bin
+     - oddjob
+     - oddjob-mkhomedir
+     - packagekit
+  tasks:
+   - name: update apt packages
+   apt:
+   name: "*"
+   state: latest
+   update_cache: yes
+   - name: Install Packages
+     apt:
+       pkg: "{{ packages }}"
+       state: latest
+       update_cache: yes
