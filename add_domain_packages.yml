@@ -1,0 +1,16 @@
+---
+- name: Install packages on Ubuntu
+  hosts: web_servers
+  become: yes
+  tasks:
+  - name: Update package list
+    apt: 
+      update_cache: yes
+
+  - name: Install required packages
+    apt: 
+      name:
+        - package1
+        - package2
+        - package3 
+      state: present
