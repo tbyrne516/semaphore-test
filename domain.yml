@@ -1,6 +1,6 @@
 ---
 - name: update system
-  hosts: web_servers
+- hosts: web_servers
   apt:
     update_cache: yes
     
