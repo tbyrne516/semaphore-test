@@ -27,7 +27,7 @@
 
             name: "NewVMName"
 
-            disk_path: "d:\virtual machines\newVMName\Hard Disks"
+            disk_path: "d:\virtual machines\newVMName\Hard Disks\NewVMName.vhdx"
 
             controller: "IDE"
 
