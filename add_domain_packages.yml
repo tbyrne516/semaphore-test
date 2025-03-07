@@ -18,5 +18,5 @@
         - samba-common-bin
         - oddjob
         - oddjob-mkhomedir
-        - name=packagekit
+        - packagekit
       state: present
