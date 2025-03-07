@@ -2,26 +2,26 @@
 - name: add software for connectin to domain
 - hosts: web_servers
   become: true
-vars:
- - packages:
-   - realmd
-   - adcli
-   - sssd
-   - libnss-sss
-   - sssd
-   - sssd-tools
-   - samba-common-bin
-   - oddjob
-   - oddjob-mkhomedir
-   - packagekit
-tasks:
+  vars:
+     - packages:
+       - realmd
+       - adcli
+       - sssd
+       - libnss-sss
+       - sssd
+       - sssd-tools
+       - samba-common-bin
+       - oddjob
+       - oddjob-mkhomedir
+       - packagekit
+  tasks:
 - name: update apt packages
-apt:
-name: "*"
-state: latest
-update_cache: yes
-- name: Install Packages
   apt:
-    pkg: "{{ packages }}"
-    state: latest
-    update_cache: yes
+  name: "*"
+  state: latest
+  update_cache: yes
+  - name: Install Packages
+    apt:
+      pkg: "{{ packages }}"
+      state: latest
+      update_cache: yes
