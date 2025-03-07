@@ -10,7 +10,7 @@
   - name: Install required packages
     apt: 
       name:
-        -realmd
+        - realmd
         - adcli
         - sssd
         - libnss-sss
