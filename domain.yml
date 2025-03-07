@@ -1,7 +1,7 @@
 ---
 - name: add software for connectin to domain
-hosts: web_servers
-become: true
+- hosts: web_servers
+  become: true
 vars:
  - packages:
    - realmd
