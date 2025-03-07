@@ -1,0 +1,44 @@
+    --- 
+    - name: Clone Hyper-V VM
+
+      hosts: hyperv_host
+
+      gather_facts: false 
+
+      tasks:
+
+        - name: Create new VM based on source VM
+
+          win_hyperv_vm:
+
+            name: "NewVMName" 
+
+            parent: "ubuntu-2204-tmp" 
+
+            state: present
+
+            # Other options like memory, CPU count, network adapter settings can be added here
+
+
+
+        - name: Attach copied disk images to the new VM
+
+          win_hyperv_vm_disk:
+
+            name: "NewVMName"
+
+            disk_path: "d:\virtual machines\newVMName\Hard Disks"
+
+            controller: "IDE"
+
+            state: present
+
+
+
+        - name: Power on the new VM
+
+          win_hyperv_vm:
+
+          name: "NewVMName"
+
+          state: started 
