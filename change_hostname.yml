@@ -3,4 +3,4 @@
   tasks:
   - name: change hostname to new
     hostname:
-      name: "lab-test4"
+      name: "lab-w04"
