@@ -8,4 +8,5 @@
 
   - name: Set hostname
 
-    shell: hostnamectl set-hostname lab-w04  
+    shell: hostnamectl set-hostname lab-w04
+    
