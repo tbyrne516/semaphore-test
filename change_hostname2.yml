@@ -1,0 +1,5 @@
+---
+- hosts: test
+- name: Set a hostname
+  ansible.builtin.hostname:
+    name: lab_w04
