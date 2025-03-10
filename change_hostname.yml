@@ -1,0 +1,6 @@
+---
+- hosts: test_server
+  tasks:
+  - name: change hostname to new
+    hostname:
+      name: "lab-test4"
